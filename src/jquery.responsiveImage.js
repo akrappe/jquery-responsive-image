@@ -138,6 +138,12 @@
             // set new source
             self.$currentSource = newSource;
 
+            // set empty source if newSource is null
+            if( !self.$currentSource ) {
+                self.setNewSource('');
+                return;
+            }
+
             // create new image
             var $image = self.createImageWithAttributes(newSource);
 
